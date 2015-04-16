@@ -209,6 +209,9 @@ pl:
       tld: TLD
       update_notice: Kraj został zaktualizowany
 
+    states:
+      states: Państwa
+
     delivery_service_prices:
       all_countries: Wszystkie kraje
       back: Powrót do listy cen
@@ -451,8 +454,8 @@ pl:
       website_properties: Właściwości strony
       weight: Waga
 
-      imports: 
-        help: Products and Categories are matched by name.  If no product is found, a new one will be created with all the attributes on the line.  If a product is found, only the quantity will be updated and all other fields will be ignored.  If no category is found, one with that name will be created .  One product per line.  
+      imports:
+        help: Products and Categories are matched by name.  If no product is found, a new one will be created with all the attributes on the line.  If a product is found, only the quantity will be updated and all other fields will be ignored.  If no category is found, one with that name will be created .  One product per line.
         success: Produkty importowane z powodzeniem
         examples:
           first:
@@ -597,6 +600,7 @@ pl:
         tax_rates: Stawki podatkowe
         users: Użytkownicy
         countries: Kraje
+        states: Państwa
         settings: Ustawienia
 
     settings:

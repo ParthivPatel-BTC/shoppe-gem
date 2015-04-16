@@ -208,6 +208,9 @@ en:
       tld: TLD
       update_notice: Country has been updated successfully
 
+    states:
+      states: States
+
     delivery_service_prices:
       all_countries: All Countries
       back: Back to prices
@@ -445,8 +448,8 @@ en:
       website_properties: Website Properties
       weight: Weight
 
-      imports: 
-        help: Products and Categories are matched by name.  If no product is found, a new one will be created with all the attributes on the line.  If a product is found, only the quantity will be updated and all other fields will be ignored.  If no category is found, one with that name will be created .  One product per line.  
+      imports:
+        help: Products and Categories are matched by name.  If no product is found, a new one will be created with all the attributes on the line.  If a product is found, only the quantity will be updated and all other fields will be ignored.  If no category is found, one with that name will be created .  One product per line.
         success: Products imported successfully
         examples:
           first:
@@ -597,6 +600,7 @@ en:
         tax_rates: Tax Rates
         users: Users
         countries: Countries
+        states: States
         settings: Settings
 
     settings:

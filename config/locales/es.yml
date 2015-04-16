@@ -208,6 +208,9 @@ es:
       tld: TLD
       update_notice: País actualizado satisfactoriamente
 
+    states:
+      states: Estados
+
     delivery_service_prices:
       all_countries: Todos los países
       back: Volver a precios
@@ -597,6 +600,7 @@ es:
         tax_rates: Tasas de Impuestos
         users: Usuarios
         countries: Países
+        states: Estados
         settings: Configuración
 
     settings:

@@ -201,6 +201,9 @@ pt-BR:
       tld: TLD
       update_notice: O País atualizado com sucesso
 
+    states:
+      states: Estados
+
     delivery_service_prices:
       all_countries: Todos os países
       back: Voltar para preços
@@ -438,8 +441,8 @@ pt-BR:
       website_properties: Propriedades do Site
       weight: Peso
 
-      imports: 
-        help: Products and Categories are matched by name.  If no product is found, a new one will be created with all the attributes on the line.  If a product is found, only the quantity will be updated and all other fields will be ignored.  If no category is found, one with that name will be created .  One product per line.  
+      imports:
+        help: Products and Categories are matched by name.  If no product is found, a new one will be created with all the attributes on the line.  If a product is found, only the quantity will be updated and all other fields will be ignored.  If no category is found, one with that name will be created .  One product per line.
         success: Produtos importados com sucesso
         examples:
           first:
@@ -590,6 +593,7 @@ pt-BR:
         tax_rates: Taxas de Imposto
         users: Usuários
         countries: Países
+        states: Estados
         settings: Preferências
 
     settings:
