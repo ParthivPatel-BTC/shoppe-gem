@@ -52,7 +52,7 @@ module Shoppe
     private
 
     def safe_params
-      params[:tax_rate].permit(:name, :rate, :address_type, :country_id)
+      params[:tax_rate].permit(:name, :rate, :address_type, :country_id, :state_id)
     end
 
   end
