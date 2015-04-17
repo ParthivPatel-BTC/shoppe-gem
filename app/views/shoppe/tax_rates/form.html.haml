@@ -20,12 +20,12 @@
         = f.select :address_type, Shoppe::TaxRate::ADDRESS_TYPES.map { |a| [t('shoppe.tax_rates.address_type_option', address: t("shoppe.tax_rates.#{a}")).html_safe, a]}, {}, :class => 'chosen-basic'
     %dl
       %dd
-        = f.collection_select :country_id, Shoppe::Country.find_country_by_code2, :id, :name, {}, {:class => 'chosen', :data => {:placeholder => t('shoppe.tax_rates.all_countries') }}
+        = f.collection_select :country_id, Shoppe::Country.find_country_by_code2, :id, :name, {}, {:class => 'chosen', :data => {:remote => true, :url => url_for(:controller => "tax_rates", :action => "country_wise_states"), :placeholder => t('shoppe.tax_rates.all_countries') }}
 
     .country_wise_states
       %dl
         %dd
-          = f.collection_select :state_id, Shoppe::State.ordered, :id, :name, {}, {:class => 'chosen'}
+          = f.collection_select :state_id, @states, :id, :name, {}, {:class => 'statess'}
   %p.submit
     - unless @tax_rate.new_record?
       %span.right= link_to t('shoppe.delete'), @tax_rate, :class => 'button purple', :method => :delete, :data => {:confirm => t('shoppe.tax_rates.delete_confirmation') }

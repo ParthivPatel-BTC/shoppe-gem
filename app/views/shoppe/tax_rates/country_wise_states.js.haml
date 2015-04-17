@@ -1,0 +1,2 @@
+- if @states.present?
+  $(".statess").empty().html("#{escape_javascript options_from_collection_for_select(@states, :id, :name)}");
