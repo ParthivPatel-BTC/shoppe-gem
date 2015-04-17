@@ -1,8 +1,10 @@
+require 'mailchimp'
 module Shoppe
   class ApplicationController < ActionController::Base
     
     before_filter :login_required
-    
+
+    before_filter :mailchimp
     rescue_from ActiveRecord::DeleteRestrictionError do |e|
       redirect_to request.referer || root_path, :alert => e.message
     end
@@ -25,7 +27,7 @@ module Shoppe
     end
     
     def current_user
-      @current_user ||= login_from_session || login_with_demo_mdoe || :false
+      @current_user ||= login_from_session #|| login_with_demo_mdoe || :false
     end
 
     def login_from_session
@@ -39,7 +41,10 @@ module Shoppe
         @user = User.first
       end
     end
-    
+
+    def mailchimp
+      @mailchimp = Mailchimp::API.new('138266e8a9415529e7d4c0dd079aedca-us10')
+    end
     helper_method :current_user, :logged_in?
     
   end

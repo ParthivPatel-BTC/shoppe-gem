@@ -2,14 +2,16 @@ module Shoppe
   class User < ActiveRecord::Base
 
     self.table_name = 'shoppe_users'
-  
+
+    has_many :orders
+
     has_secure_password
   
     # Validations
     validates :first_name, :presence => true
     validates :last_name, :presence => true
-    validates :email_address, :presence => true
-  
+    validates :email_address, :presence => true, uniqueness: true
+
     # The user's first name & last name concatenated
     #
     # @return [String]
