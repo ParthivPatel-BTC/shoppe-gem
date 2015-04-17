@@ -3,7 +3,7 @@
   = field_set_tag t('shoppe.states.state_details') do
 
     .splitContainer
-      %dd= f.collection_select :country_id, Shoppe::Country.find_country_by_code2, :id, :name, :prompt => t('shoppe.orders.select_country'), :class => 'focus'
+      %dd= f.collection_select :country_id, Shoppe::Country.find_country_by_code2, :id, :name, {}, :class => 'chosen', :prompt => t('shoppe.orders.select_country')
 
     .splitContainer
       %dl.third
