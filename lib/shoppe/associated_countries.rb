@@ -12,8 +12,8 @@ module Shoppe
     end
 
     def countries
-      return [] unless self.country_ids.is_a?(Array) && !self.country_ids.empty?
-      Shoppe::Country.where(:id => self.country_ids)
+      return [] unless self.country_id.is_a?(String) && !self.country_id.empty?
+      Shoppe::Country.where(:id => self.country_id)
     end
 
   end
