@@ -9,6 +9,6 @@ module Shoppe
     validates :name, :presence => true
 
     # All states ordered by their name asending
-    scope :ordered, -> { order(:country_id => :asc) }
+    scope :ordered, -> { order(:name => :asc) }
   end
 end
