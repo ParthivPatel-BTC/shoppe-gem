@@ -10,6 +10,7 @@ module Shoppe
 
     def new
       @tax_rate = Shoppe::TaxRate.new
+      @states = Shoppe::State.get_canada_states
       render :action => "form"
     end
 
@@ -23,6 +24,7 @@ module Shoppe
     end
 
     def edit
+      @states = Shoppe::State.find_country_wise_states(@tax_rate.country_id)
       render :action => "form"
     end
 
@@ -37,6 +39,14 @@ module Shoppe
     def destroy
       @tax_rate.destroy
       redirect_to :tax_rates, :flash => {:notice => t('shoppe.tax_rates.destroy_notice')}
+    end
+
+    def country_wise_states
+      respond_to do |format|
+        @states = Shoppe::State.find_country_wise_states(params['tax_rate']['country_id'])
+          format.js{
+        }
+      end
     end
 
     private

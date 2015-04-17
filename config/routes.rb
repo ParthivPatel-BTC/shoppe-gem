@@ -1,6 +1,7 @@
 Shoppe::Engine.routes.draw do
 
   get 'attachment/:id/:filename.:extension' => 'attachments#show'
+  get '/tax_rates/country_wise_states' => 'tax_rates#country_wise_states'
   resources :product_categories
   resources :products do
     resources :variants
