@@ -3,6 +3,7 @@ module Shoppe
 
     self.table_name = 'shoppe_orders'
 
+    belongs_to :user
     # Orders can have properties
     key_value_store :properties
 

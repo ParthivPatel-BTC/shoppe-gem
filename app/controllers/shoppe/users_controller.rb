@@ -20,6 +20,7 @@ module Shoppe
     def create
       @user = Shoppe::User.new(safe_params)
       if @user.save
+        subscribe_to_mailchimp
         redirect_to :users, :flash => {:notice => t('shoppe.users.create_notice') }
       else
         render :action => "new"
@@ -49,5 +50,27 @@ module Shoppe
       params[:user].permit(:first_name, :last_name, :email_address, :password, :password_confirmation)
     end
 
+    def subscribe_to_mailchimp
+      begin
+        subscription_detail = @mailchimp.lists.subscribe('78ceb1aa8b', "email"=> safe_params['email_address'])
+      rescue Mailchimp::ListAlreadySubscribedError
+
+      rescue Mailchimp::ListDoesNotExistError, Mailchimp::Error => ex
+        flash[:error] = "The list could not be found"
+      end
+      begin
+        @subscribe = @mailchimp.lists.batch_subscribe('78ceb1aa8b',
+                                                      [{ "EMAIL" => subscription_detail,
+                                                         :EMAIL_TYPE => 'html',
+                                                         :merge_vars => { "FIRSTNAME" => safe_params['first_name'],
+                                                                          "LASTNAME" => safe_params['last_name'],
+                                                                          "STATUS" => "Subscribed",
+                                                                          "LBOOKCNTRY" => "United States"}}],
+                                                      false, true, false)
+        flash[:notice] = 'Subscribed Successfuly'
+      rescue Mailchimp::Error => ex
+        flash[:error] = @subscribe['errors']
+      end
+    end
   end
 end

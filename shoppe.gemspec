@@ -27,7 +27,8 @@ Gem::Specification.new do |s|
   s.add_dependency "nifty-utils", ">= 1.0", "< 1.1"
   s.add_dependency "nifty-attachments", ">= 1.0.3", "< 2.0.0"
   s.add_dependency "nifty-dialog", '>= 1.0.7', '< 1.1'
-
+  s.add_dependency "pry"
+  s.add_dependency "mailchimp-api"
   s.add_development_dependency "coffee-rails", "~> 4"
   s.add_development_dependency "sass-rails", "~> 4.0"
   s.add_development_dependency "sqlite3", "~> 1.3"
