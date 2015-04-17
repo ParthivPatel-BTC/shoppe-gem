@@ -1,18 +1,18 @@
+- countries = @state.country_id.present? ? @state.country_id : Shoppe::Country.ordered
 = form_for @state do |f|
   = f.error_messages
   = field_set_tag t('shoppe.states.state_details') do
 
     .splitContainer
+      %dd= f.collection_select :country_id, Shoppe::Country.ordered, :id, :name, :prompt => t('shoppe.orders.select_country'), :class => 'focus'
+
+    .splitContainer
       %dl.third
         %dt= f.label :name, t('shoppe.states.name')
-        %dd= f.text_field :name, :class => 'focus text'
+        %dd= f.text_field :name, :class => 'text'
       %dl.third
         %dt= f.label :code2, t('shoppe.states.iso_alpha_2')
         %dd= f.text_field :code2, :class => 'text'
-
-    .splitContainer
-      %dd= f.collection_select :country_id, Shoppe::Country.ordered, :id, :name, [234], :prompt => t('shoppe.orders.select_country')
-
   %p.submit
     - unless @state.new_record?
       %span.right
