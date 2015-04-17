@@ -8,6 +8,7 @@ module Shoppe
   
     def accepted(order)
       @order = order
+      @payments = @order.payments.to_a
       mail :from => Shoppe.settings.outbound_email_address, :to => order.email_address, :subject => I18n.t('shoppe.order_mailer.received.accepted', :default => "Order Accepted")
     end
   
