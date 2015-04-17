@@ -23,6 +23,8 @@ module Shoppe
     # All countries ordered by their name asending
     scope :ordered, -> { order(:name => :asc) }
 
+    scope :find_country_by_code2, -> { where(code2: ['US', 'CA']) }
+
     # Validations
     validates :name, :presence => true
 
