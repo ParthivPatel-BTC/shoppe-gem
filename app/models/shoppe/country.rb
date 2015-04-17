@@ -23,6 +23,7 @@ module Shoppe
     # All countries ordered by their name asending
     scope :ordered, -> { order(:name => :asc) }
 
+    # Find country for select box
     scope :find_country_by_code2, -> { where(code2: ['US', 'CA']) }
 
     # Validations
