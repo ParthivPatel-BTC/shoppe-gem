@@ -115,7 +115,7 @@ en:
       template:
         body: ! 'There were problems with the following fields:'
         header:
-          one: 1 error prohibited this %{model} from being saved
+          one: "1 error prohibited this %{model} from being saved"
           many: ! '%{count} errors prohibited this %{model} from being saved'
           other: ! '%{count} errors prohibited this %{model} from being saved'
       models:
@@ -210,6 +210,16 @@ en:
 
     states:
       states: States
+      back: Back to states
+      state_details: State details
+      create_notice: State has been created successfully
+      delete_confirmation: Are you sure you wish to remove this state?
+      destroy_notice: State has been removed successfully
+      iso_alpha_2: ISO 3166-1-alpha-2
+      name: Name
+      country: Country
+      new_state: New state
+      update_notice: State has been updated successfully
 
     delivery_service_prices:
       all_countries: All Countries

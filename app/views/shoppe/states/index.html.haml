@@ -1,1 +1,19 @@
 - @page_title = t('shoppe.states.states')
+
+= content_for :header do
+  %p.buttons=link_to t('shoppe.states.new_state') , :new_state, :class => 'button green'
+  %h2.states= t('shoppe.states.states')
+
+.table
+  %table.data
+    %thead
+      %tr
+        %th= t('shoppe.states.name')
+        %th= t('shoppe.states.iso_alpha_2')
+        %th= t('shoppe.states.country')
+    %tbody
+      - for state in @states
+        %tr
+          %td= link_to state.name, [:edit, state]
+          %td= state.code2
+          %td= state.country.name

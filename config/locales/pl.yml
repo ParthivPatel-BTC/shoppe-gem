@@ -211,6 +211,16 @@ pl:
 
     states:
       states: Państwa
+      back: Powrót do państw
+      state_details: Szczegóły państwowe
+      create_notice: Stan został utworzony
+      delete_confirmation: Czy na pewno chcesz usunąć ten stan ?
+      destroy_notice: EPaństwo zostało usunięte pomyślnie
+      iso_alpha_2: ISO 3166-1-alpha-2
+      name: Nazwa
+      country: kraj
+      new_state: Nowe państwo
+      update_notice: Stan została zaktualizowana
 
     delivery_service_prices:
       all_countries: Wszystkie kraje

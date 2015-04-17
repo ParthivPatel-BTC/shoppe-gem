@@ -210,6 +210,16 @@ es:
 
     states:
       states: Estados
+      back: Volver a los estados
+      state_details: Detalles Estado
+      create_notice: Estado ha sido creada con éxito
+      delete_confirmation: ¿Estás seguro de que quieres eliminar este estado ?
+      destroy_notice: Estado se ha eliminado con éxito
+      iso_alpha_2: ISO 3166-1-alpha-2
+      name: Nombre
+      country: País
+      new_state: Nuevo estado
+      update_notice: Estado se ha actualizado correctamente
 
     delivery_service_prices:
       all_countries: Todos los países

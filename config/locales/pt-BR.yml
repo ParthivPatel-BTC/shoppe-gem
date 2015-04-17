@@ -203,6 +203,16 @@ pt-BR:
 
     states:
       states: Estados
+      back: Voltar para estados
+      state_details: Detalhes do Estado
+      create_notice: Estado foi criado com sucesso
+      delete_confirmation: Tem certeza de que deseja remover este estado ?
+      destroy_notice: Estado foi removido com sucesso
+      iso_alpha_2: ISO 3166-1-alpha-2
+      name: Nome
+      country: País
+      new_state: New estado
+      update_notice: Estado foi atualizado com sucesso
 
     delivery_service_prices:
       all_countries: Todos os países

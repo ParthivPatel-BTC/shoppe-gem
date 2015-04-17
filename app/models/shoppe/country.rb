@@ -18,7 +18,7 @@ module Shoppe
     has_many :delivered_orders, :dependent => :restrict_with_exception, :class_name => 'Shoppe::Order', :foreign_key => 'delivery_country_id'
 
     # All orders which have this state set as their delivery and billing state according to country
-    has_many :states, :dependent => :restrict_with_exception, :class_name => 'Shoppe::Country'
+    has_many :states, :dependent => :restrict_with_exception, :class_name => 'Shoppe::State'
 
     # All countries ordered by their name asending
     scope :ordered, -> { order(:name => :asc) }
